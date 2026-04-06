@@ -1,0 +1,60 @@
+<wxs module="DateFormat" src="../../wxs/DateFormat.wxs"></wxs>
+
+<!-- search.wxml -->
+<view class="page-wrapper">
+
+<!-- 固定搜索栏（带吸顶效果） -->
+<view class="fixed-search-bar {{isFixed ? 'fixed' : ''}}" style="padding-top: {{statusBarHeight}}px;">
+  <view class="search-inner">
+    <view class="back-btn" bindtap="goBack">
+      <icon type="arrow-left" size="20" color="#333" />
+    </view>
+
+    <view class="search-input-wrapper">
+      <icon type="search" size="17" color="#999" />
+      <input 
+        type="text"
+        placeholder="搜索标题、内容 ..."
+        placeholder-style="color:#bbb"
+        value="{{key}}"
+        bindinput="changeKey"
+        focus="{{true}}"
+        auto-focus="{{true}}"
+        confirm-type="search"
+      />
+      <view class="clear-btn" wx:if="{{key}}" bindtap="clearInput">×</view>
+    </view>
+
+    <text class="cancel-btn" bindtap="doSearch">搜索</text>
+  </view>
+</view>
+
+<!-- 占位，避免内容被搜索栏遮挡 -->
+<view style="height:60px;"></view>
+
+<!-- 搜索结果区域 -->
+<view class="result-container">
+  <!-- 有结果：卡片列表 -->
+  <view wx:if="{{articles.length > 0}}" class="article-list">
+    <navigator wx:for="{{articles}}" 
+      wx:key="_id" 
+      url="/pages/article/article?id={{item._id}}" 
+      class="article-card"
+      hover-class="none" >
+      <image src="{{item.img}}" mode="aspectFill" class="thumb" />
+      <view class="content">
+        <view class="title two-line"><rich-text class="article-name" nodes="{{item.title}}"></rich-text></view>
+        <view>
+            <rich-text class="desc" nodes="{{item.desc}}"></rich-text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+  <!-- 无结果 -->
+  <view wx:else class="empty">
+    <view class="empty-tip">未找到相关内容~</view>
+  </view>
+
+</view>
+</view>

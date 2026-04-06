@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="mng-menu">
+    <view bindtap="toHome" class="mng-menu-item" style="background-color: #2aa515;color:#FFF;">主页</view>
+  </view>
+  <view class="mng-menu">
+    <view bindtap="toNav" data-page="article" class="mng-menu-item">内容管理</view>
+    <view bindtap="toNav" data-page="category" class="mng-menu-item">分类管理</view>
+  </view>
+</view>
+

@@ -1,0 +1,20 @@
+<navbar title="小码哥小程序"></navbar>
+<view class="container">
+    <scroll-view class="nav-item-scroll" scroll-y>
+        <block wx:for="{{categoryList}}" wx:key="key">
+            <view class="nav-item {{(item._id == curId)? 'active' : ''}}" data-id="{{item._id}}" bindtap="changeItem">
+                <image src="{{item.img}}" style="width:48rpx;height:48rpx;margin-right:12rpx;"></image>
+                <view>{{item.name}}</view>
+            </view>
+        </block>
+    </scroll-view>
+    <scroll-view class="source-block" scroll-y bindscrolltolower="scrollToLower" style="background-color: #efefef;">
+        <view bind:tap="toArticle" data-id="{{item._id}}" wx:key="key" wx:for="{{articleList}}" class="source-card" >
+            <image src="{{item.img}}" style="width:150rpx;height:150rpx;" mode="aspectFill"/>
+            <view class="source-item">
+                <view class="title ellipsis-content">{{item.title}}</view>
+                <view class="desc ellipsis-content">{{item.desc}}</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

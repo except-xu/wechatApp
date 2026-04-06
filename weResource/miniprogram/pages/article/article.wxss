@@ -1,0 +1,182 @@
+/* article.wxss */
+page { background: #fff; }
+
+/* 沉浸式头图 */
+.header {
+  position: relative;
+  overflow: hidden;
+}
+.header-img {
+  width: 100%;
+  height: 520rpx;
+  filter: brightness(0.85);
+}
+.header-gradient {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 300rpx;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+}
+.header-title {
+  position: absolute;
+  left: 40rpx; right: 40rpx; bottom: 60rpx;
+  color: #fff;
+  font-size: 48rpx;
+  font-weight: bold;
+  line-height: 1.3;
+  text-shadow: 0 4rpx 20rpx rgba(0,0,0,0.5);
+}
+
+/* 标题区 */
+.title-section {
+  padding: 50rpx 40rpx 30rpx;
+  background: #fff;
+}
+.title-section.has-header {
+  padding-top: 40rpx;
+  margin-top: -100rpx;
+  border-radius: 40rpx 40rpx 0 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 -20rpx 40rpx rgba(0,0,0,0.08);
+}
+.title {
+  font-size: larger;
+  font-weight: bold;
+  line-height: 1.35;
+  color: #1a1a1a;
+  margin-bottom: 30rpx;
+}
+
+/* 元信息条 */
+.meta-bar {
+  display: flex;
+  align-items: center;
+  font-size: small;
+  color: #888;
+  margin-top:15rpx;
+}
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  background: #f0f0f0;
+}
+.info text { margin-right: 12rpx; }
+.dot { margin: 0 12rpx; }
+.follow-btn {
+  margin-left: auto;
+  background: #0DA4FD;
+  color: #fff;
+  border-radius: 40rpx;
+  padding: 0 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+/* 正文内容 */
+.content-section {
+  padding: 0 40rpx 180rpx;
+  line-height: 1.8;
+  color: #333;
+}
+.rich-content image {
+  width: 100% !important;
+  border-radius: 20rpx;
+  margin: 40rpx 0;
+  box-shadow: 0 10rpx 30rpx rgba(0,0,0,0.1);
+}
+.rich-content video {
+  width: 100% !important;
+  border-radius: 20rpx;
+  margin: 40rpx 0;
+}
+.rich-content p {
+  margin: 32rpx 0;
+  letter-spacing: 0.5px;
+}
+.rich-content h1, .rich-content h2, .rich-content h3 {
+  font-weight: bold;
+  margin: 60rpx 0 30rpx;
+  color: #1a1a1a;
+}
+.rich-content blockquote {
+  margin: 40rpx 0;
+  padding: 20rpx 30rpx;
+  background: #f8f9fb;
+  border-left: 8rpx solid #0DA4FD;
+  border-radius: 0 16rpx 16rpx 0;
+  color: #555;
+}
+
+/* 底部固定工具栏 */
+.bottom-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 120rpx;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20rpx);
+  border-top: 1rpx solid rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999;
+}
+.bar-btn {
+  background: transparent;
+  border: none;
+  font-size: 24rpx;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+.bar-btn .icon {
+  width: 56rpx;
+  height: 56rpx;
+  margin-bottom: 8rpx;
+}
+
+/* 骨架屏 */
+.skeleton-wrapper {
+  padding: 60rpx 40rpx;
+}
+.skeleton-title {
+  height: 60rpx;
+  background: #eee;
+  border-radius: 12rpx;
+  margin-bottom: 30rpx;
+  animation: pulse 1.5s infinite;
+}
+.skeleton-meta {
+  height: 40rpx;
+  width: 60%;
+  background: #eee;
+  border-radius: 8rpx;
+  margin-bottom: 50rpx;
+}
+.skeleton-line {
+  height: 36rpx;
+  background: #eee;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
+}
+.skeleton-line.short { width: 70%; }
+.skeleton-line.long { width: 100%; }
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* 深色模式适配（自动） */
+page[theme="dark"] {
+  background: #000;
+}
+page[theme="dark"] .title-section,
+page[theme="dark"] .content-section,
+page[theme="dark"] .bottom-bar {
+  background: #000;
+  color: #eee;
+}

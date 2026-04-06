@@ -1,0 +1,24 @@
+
+<view class="container">
+  <form bindsubmit="doSearch">
+    <view class="mng-header">
+      <input name="key" class="form-control" placeholder="分类名称查询"/>
+      <button form-type="submit" plain="true" class="icon-btn" type="default" style="width: auto;height:auto;margin:0px;margin-right:30rpx;">查询</button>
+      <button bindtap="addCategory" class="icon-btn" type="primary" plain="true" style="width: auto;height:auto;margin:0px;">添加</button>
+    </view>
+  </form>
+  
+  <view wx:for="{{categoryArr}}" class="jeecard">
+    <view style="display: flex;align-items: center;">
+        <image src="{{item.img}}" style="width:48rpx;height:48rpx;margin-right:6rpx;"></image>
+        <view class="title">{{item.name}}</view>
+    </view>
+    <view class="jeecard-opt">
+      <button data-id="{{item._id}}" bindtap="editCategory"  class="icon-btn" type="default" style="width: auto;height:auto;">
+        <image class="icon" src="/images/icon/edit.png"></image><text>修改</text>
+      </button>
+      <view class="tip">{{item.statusName}}</view>
+    </view>
+  </view>
+  
+</view>

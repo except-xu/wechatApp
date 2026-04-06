@@ -1,0 +1,102 @@
+page {
+    background-color: #efefef;
+}
+
+.container {
+    height: 100vh;
+    background-color: #efefef;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin-top:15rpx;
+}
+
+.nav-item-scroll {
+    width: 300rpx;
+    text-align: center;
+    height: 100vh;
+}
+
+.nav-item {
+    background: #efefef;
+    color: #2b2b2b;
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active {
+    background: #fff;
+    color: #07c160;
+    font-weight: bolder;
+}
+
+.ellipsis-content {
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.source-block {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+    background-color: #FFF;
+    word-break: break-all;
+}
+
+.source-card {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15rpx;
+    align-items: center;
+    padding: 12rpx;
+    border-radius: 3rpx;
+    background-color: #FFF;
+}
+
+.source-card image {
+    flex-shrink: 0;
+    border-radius: 6rpx;
+}
+
+.source-item {
+    padding: 15rpx;
+}
+
+.source-item view {
+    text-overflow: ellipsis;
+}
+
+.source-item .title {
+    color: #2b2b2b;
+    font-weight: bold;
+}
+
+.source-item .desc {
+    margin-top: 15rpx;
+    color: #666;
+    -webkit-line-clamp: 2;
+    font-size: small;
+}
+
+.comment {
+    display: flex;
+    flex-direction: row;
+    color: #6a6a6a;
+    font-size: 24rpx;
+    align-items: center;
+    margin-top: 30rpx;
+}
+
+.comment image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 12rpx;
+}

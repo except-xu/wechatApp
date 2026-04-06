@@ -1,0 +1,58 @@
+<!-- article.wxml -->
+<wxs module="DateFormat" src="../../wxs/DateFormat.wxs"></wxs>
+
+<!-- 正式内容 -->
+<view class="article-wrapper">
+
+  <!-- 头图（支持大图沉浸式） -->
+  <view class="header" wx:if="{{article.img}}">
+    <image src="{{article.img}}" mode="widthFix" class="header-img" lazy-load />
+    <view class="header-gradient"></view>
+  </view>
+
+  <!-- 标题区 -->
+  <view class="title-section {{article.img ? 'has-header' : ''}}">
+    <h1 class="title">{{article.title}}</h1>
+
+    <!-- 作者信息条 -->
+    <view class="meta-bar">
+      <image src="{{article.avatar || '../../images/icon/user-select.png'}}" class="avatar" mode="aspectFill" />
+      <view class="info">
+        <text class="author">{{article.author || '小码哥'}}</text>
+        <text class="dot">·</text>
+        <text class="date">{{DateFormat.formatTime(article.time)}}</text>
+      </view>
+
+      <!-- 关注按钮（可选） -->
+      <button class="follow-btn" size="mini" wx:if="{{false}}">+ 关注</button>
+    </view>
+  </view>
+
+  <!-- 文章正文 -->
+  <view class="content-section">
+    <rich-text nodes="{{article.content}}" class="rich-content"></rich-text>
+  </view>
+
+  <!-- 底部操作栏（固定） -->
+  <view class="bottom-bar">
+    <button class="bar-btn" bindtap="handleLike">
+      <image src="{{liked ? '../../images/icon/like-active.png' : '../../images/icon/like.png'}}" class="icon" />
+      <text>{{article.likeCount || 0}}</text>
+    </button>
+
+    <button class="bar-btn" open-type="share">
+      <image src="../../images/icon/share.png" class="icon" />
+      <text>分享</text>
+    </button>
+
+    <button class="bar-btn" bindtap="handleCollect">
+      <image src="{{collected ? '../../images/icon/star.png' : '../../images/icon/star.png'}}" class="icon" />
+      <text>收藏</text>
+    </button>
+
+    <button class="bar-btn" bindtap="toComment">
+      <image src="../../images/icon/peoples.png" class="icon" />
+      <text>{{article.read || 15}}</text>
+    </button>
+  </view>
+</view>

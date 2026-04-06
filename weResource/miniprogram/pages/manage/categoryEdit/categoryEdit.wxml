@@ -1,0 +1,34 @@
+<view class="container">
+  <form class="jeeform" bindsubmit="submitCategory">
+    <view class="form-group">
+      <label class="form-label">名称</label>
+      <input name="name" class="form-control" value="{{category.name}}"/>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">图标（小于30kb）</label>
+      <image bindtap="chooseCategoryImage" mode="widthFix" class="form-img" src="../../../images/icon/add.png"></image>
+      <image bindtap="removeCategoryImage" wx:if="{{categoryImg}}" src="{{categoryImg}}" mode="widthFix" style="width: 128rpx;height:128rpx;margin-top:15rpx;"></image>
+    </view>
+    
+    <view class="form-group">
+      <label class="form-label">状态</label>
+      <picker class="form-control" bindchange="changeStatus" value="{{index}}" range="{{statusArray}}" range-key="name">
+        <label>{{statusName}}</label>
+      </picker>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">顺序</label>
+      <picker class="form-control" bindchange="changeRecommend" value="{{index}}" range="{{recommendArray}}" range-key="name">
+        <label>{{recommendName}}</label>
+      </picker>
+    </view>
+
+    <view style="margin-top:30rpx;margin-bottom:60rpx;">
+      <button type="primary" form-type="submit">保 存</button>
+    </view>
+    
+  </form>
+</view>
+

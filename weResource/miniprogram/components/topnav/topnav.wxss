@@ -1,0 +1,24 @@
+/* tap-nav */
+.topnav{
+  background: #fff;
+  display: flex;
+  height: 70rpx;
+  line-height: 70rpx;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+.topnav-item{
+  flex: 3;
+  color: #2b2b2b;
+  text-align: center;
+}
+.topnav-active{
+  background: #2aa515;
+  color: #FFF;
+  height: 70rpx;
+}
+
